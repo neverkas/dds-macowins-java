@@ -13,7 +13,7 @@ public class Prenda{
 	}
 	
 	public int precio() {
-		return estado.precio(precioBase) + this.precioBase;
+		return estado.precio(precioBase);
 	}
 	
 	public int getPrecioBase() {
