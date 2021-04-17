@@ -1,4 +1,4 @@
-package main.java;
+package ar.edu.utn.frba.dds.macowins;
 
 public class EstadoNueva implements EstadoPrenda{
 	@Override

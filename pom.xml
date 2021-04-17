@@ -1,0 +1,31 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>Macowins</groupId>
+  <artifactId>Macowins</artifactId>
+  <version>0.1-SNAPSHOT</version>
+
+  <!-- Utilizar Java 8 -->
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <!-- Dependencias -->
+  <dependencies>
+  <!-- Junit para pruebas unitarias -->
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.12</version>
+      </dependency>
+
+   </dependencies>
+</project>
