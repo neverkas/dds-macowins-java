@@ -1,11 +1,11 @@
 package ar.edu.utn.frba.dds.macowins.Prenda;
 
 public class Prenda{
-	private String tipo;
+	private TipoPrenda tipo;
 	private double precioBase;
 	private EstadoPrenda estado;
 
-	public Prenda(String tipo, double precioBase, EstadoPrenda estado) {
+	public Prenda(TipoPrenda tipo, double precioBase, EstadoPrenda estado) {
 		this.tipo = tipo;
 		this.precioBase = precioBase;
 		this.estado = estado;

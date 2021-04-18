@@ -34,7 +34,7 @@ class VentaTest {
 	@Test
 	public void elPrecioDeVentaDeSacosNuevosEnEfectivoSeMantiene() {
 		int cantidadDeSacos=15;
-		Prenda sacoNuevo = new Prenda("saco", precio, nueva);
+		Prenda sacoNuevo = new Prenda(TipoPrenda.SACO, precio, nueva);
 		Venta venta = new Venta(new TipoVentaEfectivo(), fechaDeHoy);
 
 		venta.agregarPrendasVendida(sacoNuevo, cantidadDeSacos);
@@ -45,7 +45,7 @@ class VentaTest {
 	@Test
 	public void elPrecioDeVentaDeSacosEnPromocionEfectivoEsMasBarato() {
 		int cantidadDeSacos=15;
-		Prenda sacoEnPromocion = new Prenda("saco", precio, promocion);
+		Prenda sacoEnPromocion = new Prenda(TipoPrenda.SACO, precio, promocion);
 		Venta venta = new Venta(new TipoVentaEfectivo(), fechaDeHoy);
 		venta.agregarPrendasVendida(sacoEnPromocion, cantidadDeSacos);
 		
@@ -56,7 +56,7 @@ class VentaTest {
 	public void elPrecioDeVentaDeSacosNuevosEnTarjetaTieneRecargo() {
 		int cantidadDeSacos=15;
 		int cantidadCuotas=12, coeficiente=2;
-		Prenda sacoNuevo = new Prenda("saco", precio, nueva);
+		Prenda sacoNuevo = new Prenda(TipoPrenda.SACO, precio, nueva);
 		Venta venta = new Venta(new TipoVentaTarjeta(cantidadCuotas, coeficiente), fechaDeHoy);
 
 		venta.agregarPrendasVendida(sacoNuevo, cantidadDeSacos);
@@ -68,7 +68,7 @@ class VentaTest {
 	@Test
 	public void lasGananciasEnNavidadFueronNormales() {
 		int cantidadDeSacos=15;
-		Prenda sacoNuevo = new Prenda("saco", precio, nueva);
+		Prenda sacoNuevo = new Prenda(TipoPrenda.SACO, precio, nueva);
 		Venta venta = new Venta(new TipoVentaEfectivo(), fechaDeNavidad);
 
 		venta.agregarPrendasVendida(sacoNuevo, cantidadDeSacos);
@@ -82,7 +82,7 @@ class VentaTest {
 	@Test
 	public void lasGananciasEnSanValentinFueronAltas() {		
 		int cantidadDeSacos=30;
-		Prenda sacoEnPromocion = new Prenda("saco", precio, promocion);
+		Prenda sacoEnPromocion = new Prenda(TipoPrenda.SACO, precio, promocion);
 		Venta venta = new Venta(new TipoVentaEfectivo(), fechaDeSanValentin);
 
 		venta.agregarPrendasVendida(sacoEnPromocion, cantidadDeSacos);
@@ -96,7 +96,7 @@ class VentaTest {
 	@Test
 	public void hoyNoHuboGanancias() {		
 		int cantidadDeSacos=30;
-		Prenda sacoEnPromocion = new Prenda("saco", precio, promocion);
+		Prenda sacoEnPromocion = new Prenda(TipoPrenda.SACO, precio, promocion);
 		Venta venta = new Venta(new TipoVentaEfectivo(), fechaDeSanValentin);
 
 		venta.agregarPrendasVendida(sacoEnPromocion, cantidadDeSacos);

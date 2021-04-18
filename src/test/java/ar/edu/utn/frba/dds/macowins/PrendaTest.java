@@ -26,21 +26,21 @@ public class PrendaTest {
 	
 	@Test
 	public void unaPrendaNuevaMantieneSuPrecio() {
-		Prenda prenda = new Prenda("saco", precio, nueva);
+		Prenda prenda = new Prenda(TipoPrenda.SACO, precio, nueva);
 
 		assertEquals(precio, prenda.getPrecio());
 	}
 
 	@Test
 	public void unaPrendaConPromocionEsMasBarata() {
-		Prenda prenda = new Prenda("saco", precio, promocion);
+		Prenda prenda = new Prenda(TipoPrenda.SACO, precio, promocion);
 
 		assertEquals(precio - precioPromocion, prenda.getPrecio());
 	}
 
 	@Test
 	public void unaPrendaEnLiquidacionCuestaLaMitad() {
-		Prenda prenda = new Prenda("saco", precio, liquidacion);
+		Prenda prenda = new Prenda(TipoPrenda.SACO, precio, liquidacion);
 
 		assertEquals(precio / 2, prenda.getPrecio());
 	}
