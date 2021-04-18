@@ -1,5 +1,6 @@
 package ar.edu.utn.frba.dds.macowins.Venta;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,19 +9,18 @@ import ar.edu.utn.frba.dds.macowins.Prenda.Prenda;
 public class Venta {
 	List<VentaItem> prendasVendidas;
 	private TipoVenta tipo;
+	private LocalDate fechaDeVenta;
 	
-	public Venta(TipoVenta tipo) {
-		super();
+	public Venta(TipoVenta tipo, LocalDate fechaDeVenta) {
 		this.tipo = tipo;
+		this.fechaDeVenta = fechaDeVenta;
 		this.prendasVendidas = new ArrayList<>();
 	}
-	
-	public Venta(TipoVenta tipo, List<VentaItem> prendas) {
-		this(tipo);
-		//this.tipo = tipo;
-		this.prendasVendidas = prendas;
-	}
 
+	public boolean esRealizadaEnEstaFecha(LocalDate fecha) {
+		return this.fechaDeVenta.equals(fecha);
+	}
+	
 	public int cantidadPrendas() {
 		return prendasVendidas
 				.stream()
