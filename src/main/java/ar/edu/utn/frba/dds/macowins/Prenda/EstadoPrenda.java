@@ -1,5 +1,5 @@
-package ar.edu.utn.frba.dds.macowins;
+package ar.edu.utn.frba.dds.macowins.Prenda;
 
 public interface EstadoPrenda {
-	public int precio(int precioBase);
+	public double precio(double precioBase);
 }

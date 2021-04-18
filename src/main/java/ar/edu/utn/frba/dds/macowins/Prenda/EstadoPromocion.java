@@ -1,4 +1,4 @@
-package ar.edu.utn.frba.dds.macowins;
+package ar.edu.utn.frba.dds.macowins.Prenda;
 
 public class EstadoPromocion  implements EstadoPrenda{
 	private int valor;
@@ -8,7 +8,7 @@ public class EstadoPromocion  implements EstadoPrenda{
 	}
 	
 	@Override
-	public int precio(int precioBase) {
+	public double precio(double precioBase) {
 		return precioBase - valor;
 	}
 }

@@ -1,29 +1,42 @@
 package ar.edu.utn.frba.dds.macowins;
 
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Test;
 
-import org.junit.Test;
+import ar.edu.utn.frba.dds.macowins.Prenda.EstadoLiquidacion;
+import ar.edu.utn.frba.dds.macowins.Prenda.EstadoNueva;
+import ar.edu.utn.frba.dds.macowins.Prenda.EstadoPromocion;
+import ar.edu.utn.frba.dds.macowins.Prenda.Prenda;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.BeforeEach;
 
 public class PrendaTest {
 
+	private int precio;
+	
+	@BeforeEach
+	public void initialize() {
+		precio = 100;
+	}
 	@Test
 	public void unaPrendaNuevaMantieneSuPrecio() {
-		Prenda prenda = new Prenda("saco", 300, new EstadoNueva());
-		
-		assertEquals(300, prenda.precio());
+		Prenda prenda = new Prenda("saco", precio, new EstadoNueva());
+
+		assertEquals(precio, prenda.getPrecio());
 	}
 
 	@Test
 	public void unaPrendaConPromocionEsMasBarata() {
-		Prenda prenda = new Prenda("saco", 300, new EstadoPromocion(100));
-		
-		assertEquals(300-100, prenda.precio());
+		Prenda prenda = new Prenda("saco", precio, new EstadoPromocion(100));
+
+		assertEquals(precio - 100, prenda.getPrecio());
 	}
 
 	@Test
 	public void unaPrendaEnLiquidacionCuestaLaMitad() {
-		Prenda prenda = new Prenda("saco", 300, new EstadoLiquidacion());
-		
-		assertEquals(300/2, prenda.precio());
+		Prenda prenda = new Prenda("saco", precio, new EstadoLiquidacion());
+
+		assertEquals(precio / 2, prenda.getPrecio());
 	}
 }

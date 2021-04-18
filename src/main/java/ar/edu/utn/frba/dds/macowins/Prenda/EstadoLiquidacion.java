@@ -1,12 +1,12 @@
-package ar.edu.utn.frba.dds.macowins;
+package ar.edu.utn.frba.dds.macowins.Prenda;
 
 public class EstadoLiquidacion implements EstadoPrenda{
 	@Override
-	public int precio(int precioBase) {
+	public double precio(double precioBase) {
 		return this.precioConDescuento(precioBase);
 	}
 	
-	public int precioConDescuento(int precio) {
+	public double precioConDescuento(double precio) {
 		return precio / 2;
 	}
 }
