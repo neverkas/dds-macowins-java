@@ -4,6 +4,11 @@ public class TipoVentaTarjeta implements TipoVenta{
 	private int cantidadCuotas;
 	private int coeficiente;
 	
+	public TipoVentaTarjeta(int cantidadCuotas, int coeficiente) {
+		this.cantidadCuotas = cantidadCuotas;
+		this.coeficiente = coeficiente;
+	}
+	
 	@Override
 	public double precioVenta(double precio) {
 		return this.precioConRecargo(precio);

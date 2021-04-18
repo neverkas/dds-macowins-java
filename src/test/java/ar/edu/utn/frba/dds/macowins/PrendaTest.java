@@ -2,14 +2,11 @@ package ar.edu.utn.frba.dds.macowins;
 
 import org.junit.jupiter.api.Test;
 
-import ar.edu.utn.frba.dds.macowins.Prenda.EstadoLiquidacion;
-import ar.edu.utn.frba.dds.macowins.Prenda.EstadoNueva;
-import ar.edu.utn.frba.dds.macowins.Prenda.EstadoPromocion;
-import ar.edu.utn.frba.dds.macowins.Prenda.Prenda;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
+
+import ar.edu.utn.frba.dds.macowins.Prenda.*;
 
 public class PrendaTest {
 

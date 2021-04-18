@@ -6,26 +6,41 @@ import java.util.List;
 import ar.edu.utn.frba.dds.macowins.Prenda.Prenda;
 
 public class Venta {
-	List<Prenda> prendas;
+	List<VentaItem> prendasVendidas;
 	private TipoVenta tipo;
 	
 	public Venta(TipoVenta tipo) {
+		super();
 		this.tipo = tipo;
-		this.prendas = new ArrayList<>();
+		this.prendasVendidas = new ArrayList<>();
 	}
 	
+	public Venta(TipoVenta tipo, List<VentaItem> prendas) {
+		this(tipo);
+		//this.tipo = tipo;
+		this.prendasVendidas = prendas;
+	}
+
 	public int cantidadPrendas() {
-		return prendas.size();
-	}
-	
-	public double precioVentaTotal() {
-		return prendas
+		return prendasVendidas
 				.stream()
-				.mapToDouble(prenda -> tipo.precioVenta(prenda.getPrecio()))
+				.mapToInt(ventaItem -> ventaItem.getCantidad())
 				.sum();
 	}
 	
-	public void agregarPrendaVendida(Prenda prenda) {
-		prendas.add(prenda);
+	public double precioVentaTotal() {
+		return prendasVendidas
+				.stream()
+				.mapToDouble(ventaItem -> tipo.precioVenta(ventaItem.precio()))
+				.sum();
+	}
+	
+	public void agregarPrendasVendida(Prenda prenda, int cantidad) {
+		VentaItem item = new VentaItem(prenda, cantidad);
+		this.prendasVendidas.add(item);
+	}
+	
+	public void agregarVariasPrendasVendidas(List<VentaItem> prendas) {
+		this.prendasVendidas.addAll(prendas);
 	}
 }

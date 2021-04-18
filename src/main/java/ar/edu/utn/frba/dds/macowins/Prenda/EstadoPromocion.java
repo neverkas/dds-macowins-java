@@ -1,9 +1,9 @@
 package ar.edu.utn.frba.dds.macowins.Prenda;
 
 public class EstadoPromocion  implements EstadoPrenda{
-	private int valor;
+	private double valor;
 	
-	public EstadoPromocion(int valor) {
+	public EstadoPromocion(double valor) {
 		this.valor = valor;
 	}
 	
