@@ -13,29 +13,37 @@ import org.junit.jupiter.api.BeforeEach;
 
 public class PrendaTest {
 
-	private int precio;
-	
+	private int precio, precioPromocion;
+	EstadoNueva nueva;
+	EstadoPromocion promocion;
+	EstadoLiquidacion liquidacion;
+
 	@BeforeEach
 	public void initialize() {
-		precio = 100;
+		precio = 200;
+		precioPromocion = 100;
+		nueva = new EstadoNueva();
+		promocion = new EstadoPromocion(100);
+		liquidacion = new EstadoLiquidacion();
 	}
+	
 	@Test
 	public void unaPrendaNuevaMantieneSuPrecio() {
-		Prenda prenda = new Prenda("saco", precio, new EstadoNueva());
+		Prenda prenda = new Prenda("saco", precio, nueva);
 
 		assertEquals(precio, prenda.getPrecio());
 	}
 
 	@Test
 	public void unaPrendaConPromocionEsMasBarata() {
-		Prenda prenda = new Prenda("saco", precio, new EstadoPromocion(100));
+		Prenda prenda = new Prenda("saco", precio, promocion);
 
-		assertEquals(precio - 100, prenda.getPrecio());
+		assertEquals(precio - precioPromocion, prenda.getPrecio());
 	}
 
 	@Test
 	public void unaPrendaEnLiquidacionCuestaLaMitad() {
-		Prenda prenda = new Prenda("saco", precio, new EstadoLiquidacion());
+		Prenda prenda = new Prenda("saco", precio, liquidacion);
 
 		assertEquals(precio / 2, prenda.getPrecio());
 	}
